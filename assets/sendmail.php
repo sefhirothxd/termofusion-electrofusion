@@ -8,7 +8,7 @@ function isEmail($email) {
 if($_POST) {
 
     // Enter the email where you want to receive the message
-    $emailTo = 'bveracachay@gmail.com';
+    $emailTo = 'ventas@termofusion-electrofusion.com';
 
     $clientName = addslashes(trim($_POST['name']));
     $clientEmail = addslashes(trim($_POST['email']));
@@ -38,7 +38,7 @@ if($_POST) {
 	//if($clientName != '' && isEmail($clientEmail) && $clientFono != '' && $message != '') {
         // Send email
 	$headers = "From: " . $clientName . " <" . $clientEmail . ">" . "\r\n" . "Reply-To: " . $clientEmail;
-	mail($emailTo, $subject . ' bveracachay@gmail.com', $message, $headers);
+	mail($emailTo,  $subject,'Hola mi nombre es '. $clientName . ' y vengo de la pagina: https://termofusion-electrofusion.com/'."\n" . 'mi numero de telefono es: '. $clientFono."\n". $message, $headers);
     }
 
     echo json_encode($array);
