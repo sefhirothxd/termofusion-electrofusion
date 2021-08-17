@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
 
 		nameLabel.html('Nombres y Apellidos');
 		emailLabel.html('Correo V&aacute;lido');
-		/*fonoLabel.html('Tel&eacute;fono / Celular');*/
+		fonoLabel.html('Tel&eacute;fono / Celular');
 		messageLabel.html('Mensaje');
 
 		var postdata = form.serialize();
@@ -32,9 +32,11 @@ jQuery(document).ready(function () {
 						' - <span class="red error-label"> ' + json.emailMessage + '</span>'
 					);
 				}
-				/*if(json.fonoMessage != '') {
-                	fonoLabel.append(' - <span class="red error-label"> ' + json.fonoMessage + '</span>');
-                }*/
+				if (json.fonoMessage != '') {
+					fonoLabel.append(
+						' - <span class="red error-label"> ' + json.fonoMessage + '</span>'
+					);
+				}
 				if (json.messageMessage != '') {
 					messageLabel.append(
 						' - <span class="red error-label"> ' +
